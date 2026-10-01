@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Test PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Test PWA">
+  <meta name="theme-color" content="#2d6cdf">
+  <style>
+    body { font-family: -apple-system, sans-serif; text-align: center;
+           padding: 4rem 1rem; margin: 0; }
+    button { font-size: 1.5rem; padding: 1rem 2rem; border: 0;
+             border-radius: 12px; background: #2d6cdf; color: #fff; }
+    #n { font-size: 4rem; margin: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Ça marche ✅</h1>
+  <div id="n">0</div>
+  <button id="b">+1</button>
+  <script>
+    let n = Number(localStorage.getItem("n") || 0);
+    const el = document.getElementById("n");
+    el.textContent = n;
+    document.getElementById("b").onclick = () => {
+      n++; el.textContent = n; localStorage.setItem("n", n);
+    };
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+  </script>
+</body>
+</html>
