@@ -1,9 +1,10 @@
 {
-  "name": "Test PWA",
-  "short_name": "Test",
+  "name": "Jeux de cartes",
+  "short_name": "Jeux de cartes",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2d6cdf"
+  "background_color": "#f3f5f2",
+  "theme_color": "#1f4d3a",
+  "icons": [{ "src": "icon.png", "sizes": "180x180", "type": "image/png" }]
 }
